@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.AuthenticationData" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/rv_item_background_view"
+        android:backgroundTint="@color/black">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgFingerprint"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContent"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFingerprint"
+            app:layout_constraintStart_toEndOf="@+id/imgFingerprint"
+            app:layout_constraintTop_toTopOf="@+id/imgFingerprint"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="Content" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgScan"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean , pos)}"
+            android:src="@drawable/img_scan"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFingerprint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgFingerprint" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgText"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean , pos)}"
+            android:src="@drawable/img_text"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFingerprint"
+            app:layout_constraintEnd_toStartOf="@+id/imgScan"
+            app:layout_constraintTop_toTopOf="@+id/imgFingerprint" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/innerCs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgFingerprint">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPickedUp"
+                style="@style/TextView.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_text_view_bg"
+                android:backgroundTint="@color/black_4"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="Picked up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/innerCs"
+                app:layout_constraintWidth_percent=".45" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNotPickingUp"
+                style="@style/TextView.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_text_view_bg"
+                android:backgroundTint="@color/black_4"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="Not Picking up"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvPickedUp"
+                app:layout_constraintWidth_percent=".45" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReason"
+                style="@style/TextView.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPickedUp"
+                android:text="Reason for not picking up" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etReason"
+                style="@style/EditTextStyle2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="input"
+                android:inputType="text"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvReason" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@color/view_line_color_3"
+                app:layout_constraintTop_toBottomOf="@+id/etReason" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

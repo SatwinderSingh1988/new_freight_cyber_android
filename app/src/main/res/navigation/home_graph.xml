@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.home.HomeFragment"
+        android:label="HomeFragment" />
+
+    <action
+        android:id="@+id/action_homeFragment_to_JobFragment"
+        app:destination="@id/jobFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_homeFragment_to_ewdFragment"
+        app:destination="@id/ewdFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/jobFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.JobFragment"
+        android:label="JobFragment" />
+
+    <fragment
+        android:id="@+id/allJobFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.all_job.AllJobFragment"
+        android:label="AllJobFragment" />
+
+    <fragment
+        android:id="@+id/jobDetailsFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.job_detail.JobDetailsFragment"
+        android:label="JobDetailsFragment" />
+
+    <fragment
+        android:id="@+id/vehicleInspectionFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.asset_checklist.vehicle.VehicleInspectionFragment"
+        android:label="VehicleInspectionFragment" />
+
+    <fragment
+        android:id="@+id/inspectionCheckListFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.asset_checklist.inspection.InspectionCheckListFragment"
+        android:label="InspectionCheckListFragment" />
+
+    <fragment
+        android:id="@+id/inspectionCheckListTwoFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.asset_checklist.inspection.InspectionCheckFlatTopFragment"
+        android:label="InspectionCheckListTwoFragment" />
+
+    <fragment
+        android:id="@+id/declarationConfirmationFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.declarations.DeclarationConfirmationFragment"
+        android:label="DeclarationConfirmationFragment" />
+
+    <fragment
+        android:id="@+id/activeJobMapFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.active_job.ActiveJobMapFragment"
+        android:label="ActiveJobMapFragment" />
+
+    <fragment
+        android:id="@+id/inspectionSuccessFullyFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.asset_checklist.inspection.InspectionSuccessFullyFragment"
+        android:label="InspectionSuccessFullyFragment" />
+
+    <fragment
+        android:id="@+id/routeMapFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.route_map.RouteMapFragment"
+        android:label="RouteMapFragment" />
+
+    <fragment
+        android:id="@+id/pickupItemFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.pickup_item.PickupItemFragment"
+        android:label="PickupItemFragment" />
+    <fragment
+        android:id="@+id/qrFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.scan_qr.QrFragment"
+        android:label="QrFragment" />
+    <fragment
+        android:id="@+id/deliveryNoteFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.delivery_note.DeliveryNoteFragment"
+        android:label="DeliveryNoteFragment" />
+    <fragment
+        android:id="@+id/reportIncidentFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report_incident.ReportIncidentFragment"
+        android:label="ReportIncidentFragment" />
+    <fragment
+        android:id="@+id/jobSuccessFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.job_success.JobSuccessFragment"
+        android:label="JobSuccessFragment" />
+    <fragment
+        android:id="@+id/reportIssueFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report.driver_report.ReportIssueFragment"
+        android:label="ReportIssueFragment" />
+    <fragment
+        android:id="@+id/reportDelayFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report.report_delay.ReportDelayFragment"
+        android:label="ReportDelayFragment" />
+    <fragment
+        android:id="@+id/reportIncidentTwoFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report.report_incident.ReportIncidentTwoFragment"
+        android:label="ReportIncidentTwoFragment" />
+    <fragment
+        android:id="@+id/reportDamageFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report.report_damage.ReportDamageFragment"
+        android:label="ReportDamageFragment" />
+
+    <fragment
+        android:id="@+id/myReportFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report.my_report.MyReportFragment"
+        android:label="MyReportFragment" />
+
+    <fragment
+        android:id="@+id/reportDelayDetailsFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report.my_report.details.ReportDelayDetailsFragment"
+        android:label="ReportDelayDetailsFragment" />
+
+    <fragment
+        android:id="@+id/reportIncidentDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report.my_report.details.ReportIncidentDetailFragment"
+        android:label="ReportIncidentDetailFragment" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.notification.NotificationFragment"
+        android:label="NotificationFragment" />
+
+    <fragment
+        android:id="@+id/jobHistoryFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.job_history.JobHistoryFragment"
+        android:label="JobHistoryFragment" />
+    <fragment
+        android:id="@+id/jobHistoryDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.job_history.details.JobHistoryDetailFragment"
+        android:label="JobHistoryDetailFragment" />
+    <fragment
+        android:id="@+id/complianceAuthFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.comp_auth.ComplianceAuthFragment"
+        android:label="ComplianceAuthFragment" />
+
+    <fragment
+        android:id="@+id/complianceDataFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.comp_data.ComplianceDataFragment"
+        android:label="ComplianceDataFragment" />
+
+    <fragment
+        android:id="@+id/loadingDataFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.comp_data.LoadingDataFragment"
+        android:label="LoadingDataFragment" />
+
+    <fragment
+        android:id="@+id/complianceDriverDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.driver_details.ComplianceDriverDetailFragment"
+        android:label="ComplianceDriverDetailFragment" />
+
+    <fragment
+        android:id="@+id/ewdSystemFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.ewd_system.EwdSystemFragment"
+        android:label="EwdSystemFragment" />
+
+    <fragment
+        android:id="@+id/reportTransferFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.report_transfer.ReportTransferFragment"
+        android:label="ReportTransferFragment" />
+
+    <fragment
+        android:id="@+id/inboxFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.inbox.chat_inbox.InboxFragment"
+        android:label="InboxFragment" />
+
+    <fragment
+        android:id="@+id/inboxCreateNewFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.inbox.inbox_create_new.InboxCreateNewFragment"
+        android:label="InboxCreateNewFragment" />
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.inbox.chat.ChatFragment"
+        android:label="ChatFragment" />
+    <fragment
+        android:id="@+id/workDiarySoloFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.work_diary_solo.WorkDiarySoloFragment"
+        android:label="WorkDiarySoloFragment" />
+    <fragment
+        android:id="@+id/ewdFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.ewd_fragment.EwdFragment"
+        android:label="EwdFragment" />
+    <fragment
+        android:id="@+id/driveArrangementFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.drive_arrangment.DriveArrangementFragment"
+        android:label="DriveArrangementFragment" />
+    <fragment
+        android:id="@+id/ewdProfileDetails"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.ewd_profile_details.EwdProfileDetails"
+        android:label="EwdProfileDetails" />
+    <fragment
+        android:id="@+id/fatigueManagementFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.fatigue_management.FatigueManagementFragment"
+        android:label="FatigueManagementFragment" />
+    <fragment
+        android:id="@+id/confirmDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.confirm_details.ConfirmDetailFragment"
+        android:label="ConfirmDetailFragment" />
+    <fragment
+        android:id="@+id/addConfirmDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.add_confirm_details.AddConfirmDetailFragment"
+        android:label="AddConfirmDetailFragment" />
+    <fragment
+        android:id="@+id/confirmDetailTwoFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.confirm_details.ConfirmDetailTwoFragment"
+        android:label="ConfirmDetailTwoFragment" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.dashboard.DashboardFragment"
+        android:label="DashboardFragment" />
+    <fragment
+        android:id="@+id/startRestFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.start_rest.StartRestFragment"
+        android:label="StartRestFragment" />
+    <fragment
+        android:id="@+id/startWorkFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.start_work.StartWorkFragment"
+        android:label="StartWorkFragment" />
+    <fragment
+        android:id="@+id/primaryDriverFatigueFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.two_up.primary_fatigue.PrimaryDriverFatigueFragment"
+        android:label="PrimaryDriverFatigueFragment" />
+
+    <fragment
+        android:id="@+id/secondaryDriverFatigueFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.two_up.secondary_fatigue.SecondaryDriverFatigueFragment"
+        android:label="SecondaryDriverFatigueFragment" />
+    <fragment
+        android:id="@+id/twoUpConfirmDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.two_up.confirm_detail.TwoUpConfirmDetailFragment"
+        android:label="TwoUpConfirmDetailFragment" />
+
+    <fragment
+        android:id="@+id/declarationTwoUpFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.two_up.declaration_2up.DeclarationTwoUpFragment"
+        android:label="DeclarationTwoUpFragment" />
+
+    <fragment
+        android:id="@+id/twoUpConfirmDetailTwoFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.two_up.confirm_detail.TwoUpConfirmDetailTwoFragment"
+        android:label="TwoUpConfirmDetailTwoFragment" />
+    <fragment
+        android:id="@+id/twoUpDashboardFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.two_up.two_up_dashboard.TwoUpDashboardFragment"
+        android:label="TwoUpDashboardFragment" />
+    <fragment
+        android:id="@+id/potentialNonComplianceFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.two_up.potential.PotentialNonComplianceFragment"
+        android:label="PotentialNonComplianceFragment" />
+    <fragment
+        android:id="@+id/assignedDriverFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.assigned_driver.AssignedDriverFragment"
+        android:label="AssignedDriverFragment" />
+    <fragment
+        android:id="@+id/loggingOffFirstFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.logging_off.LoggingOffFirstFragment"
+        android:label="LoggingOffFirstFragment" />
+    <fragment
+        android:id="@+id/loggingOffSecondFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.logging_off.LoggingOffSecondFragment"
+        android:label="LoggingOffSecondFragment" />
+    <fragment
+        android:id="@+id/addDiarySwitchFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.work_diary.AddDiarySwitchFragment"
+        android:label="AddDiarySwitchFragment" />
+    <fragment
+        android:id="@+id/WWDFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.work_diary.WWDFragment"
+        android:label="WWDFragment" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+
+    <fragment
+        android:id="@+id/profileSettingsFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.settings.profile_setting.ProfileSettingsFragment"
+        android:label="ProfileSettingsFragment" />
+
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.settings.event.EventFragment"
+        android:label="EventFragment" />
+
+    <fragment
+        android:id="@+id/addAnnotationFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.add_annotation.AddAnnotationFragment"
+        android:label="AddAnnotationFragment" />
+
+    <fragment
+        android:id="@+id/investigationFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.investigation_aid.InvestigationFragment"
+        android:label="InvestigationFragment" />
+
+    <fragment
+        android:id="@+id/workRestChangesFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.work_and_rest_changes.WorkRestChangesFragment"
+        android:label="WorkRestChangesFragment" />
+
+    <fragment
+        android:id="@+id/safetyInductionFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.safty_induction.SafetyInductionFragment"
+        android:label="SafetyInductionFragment" />
+
+    <fragment
+        android:id="@+id/acceptedJobFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.accepted_job.AcceptedJobFragment"
+        android:label="AcceptedJobFragment" />
+
+    <fragment
+        android:id="@+id/rejectedJobFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.rejected_job.RejectedJobFragment"
+        android:label="RejectedJobFragment" />
+    <fragment
+        android:id="@+id/fuelConsumptionFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.fuel_consumption.FuelConsumptionFragment"
+        android:label="FuelConsumptionFragment" />
+    <fragment
+        android:id="@+id/showFullScreenImageFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.home.ShowFullScreenImageFragment"
+        android:label="ShowFullScreenImageFragment" />
+
+    <fragment
+        android:id="@+id/addAnnotationTwoFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.add_annotation.AddAnnotationTwoFragment"
+        android:label="AddAnnotationTwoFragment" />
+
+
+
+    <fragment
+        android:id="@+id/driverProfileFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.driver_pro_frag.DriverProfileFragment"
+        android:label="DriverProfileFragment"/>
+
+    <fragment
+        android:id="@+id/licenseInfoSecondFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.license.LicenseInfoSecondFragment"
+        android:label="LicenseInfoSecondFragment" />
+
+    <fragment
+        android:id="@+id/licenseInfoFirstFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.license.LicenseInfoFirstFragment"
+        android:label="LicenseInfoFirstFragment" />
+
+    <fragment
+        android:id="@+id/employerDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.transport_operators.EmployerDetailFragment"
+        android:label="EmployerDetailFragment" />
+
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.help.HelpFragment"
+        android:label="HelpFragment" />
+
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.success.SuccessFragment"
+        android:label="SuccessFragment" />
+
+    <fragment
+        android:id="@+id/DSEModuleFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.dse.DSEModuleFragment"
+        android:label="DSEModuleFragment" />
+
+    <fragment
+        android:id="@+id/DSEModuleDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.dse.detail.DSEModuleDetailFragment"
+        android:label="DSEModuleDetailFragment" />
+
+    <fragment
+        android:id="@+id/congratulationFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.congratulation.CongratulationFragment"
+        android:label="CongratulationFragment" />
+
+    <fragment
+        android:id="@+id/transportOperatorFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.transport_operators.TransportOperatorFragment"
+        android:label="TransportOperatorFragment" />
+    <fragment
+        android:id="@+id/additionalIdentificationFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.additional_identification.AdditionalIdentificationFragment"
+        android:label="AdditionalIdentificationFragment" />
+    <fragment
+        android:id="@+id/medicareDetailsFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.medicare.MedicareDetailsFragment"
+        android:label="MedicareDetailsFragment" />
+    <fragment
+        android:id="@+id/addAdditionalFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.additional_identification.AddAdditionalFragment"
+        android:label="AddAdditionalFragment" />
+    <fragment
+        android:id="@+id/emergencyDetailFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.emergency_contact.EmergencyDetailFragment"
+        android:label="EmergencyDetailFragment" />
+    <fragment
+        android:id="@+id/emergencyEditFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_profile.emergency_contact.EmergencyEditFragment"
+        android:label="EmergencyEditFragment" />
+    <fragment
+        android:id="@+id/switchDriverBioFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.switch_driver_biomatrics.SwitchDriverBioFragment"
+        android:label="SwitchDriverBioFragment" />
+    <fragment
+        android:id="@+id/inspectionCheckTautlinerFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.asset_checklist.inspection.InspectionCheckTautlinerFragment"
+        android:label="InspectionCheckTautlinerFragment" />
+    <fragment
+        android:id="@+id/addSecondaryDriverFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.two_up.secondary_driver_auth.AddSecondaryDriverFragment"
+        android:label="AddSecondaryDriverFragment" />
+    <fragment
+        android:id="@+id/submitDiaryFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.ewd.submit_diary.SubmitDiaryFragment"
+        android:label="SubmitDiaryFragment" />
+    <fragment
+        android:id="@+id/workDiarySummaryFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.work_diary_summary.WorkDiarySummaryFragment"
+        android:label="WorkDiarySummaryFragment" />
+    <fragment
+        android:id="@+id/acknowledgementFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.compliance.report_transfer.AcknowledgementFragment"
+        android:label="AcknowledgementFragment" />
+    <fragment
+        android:id="@+id/driverTimeSheetFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_timesheet.DriverTimeSheetFragment"
+        android:label="DriverTimeSheetFragment" />
+    <fragment
+        android:id="@+id/submitApprovalFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_timesheet.SubmitApprovalFragment"
+        android:label="SubmitApprovalFragment" />
+    <fragment
+        android:id="@+id/timeSheetSentFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.driver_timesheet.TimeSheetSentFragment"
+        android:label="TimeSheetSentFragment" />
+
+    <fragment
+        android:id="@+id/reportSuccessFragment"
+        android:name="com.app.freightCyber.presentation.home_dashboard.job.report.report_success.ReportSuccessFragment"
+        android:label="ReportSuccessFragment" />
+
+</navigation>

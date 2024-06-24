@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.driver_profile.help.HelpFragmentVM" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/img_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLicense"
+                    style="@style/TextView.Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Help"
+                    android:textSize="@dimen/_21sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgBack"
+                    app:layout_constraintStart_toEndOf="@+id/imgBack"
+                    app:layout_constraintTop_toTopOf="@+id/imgBack" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLicenseType"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Subject"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etSubject"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:onClick="@{(v)-> vm.onClick(v)}"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tvLicenseType"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLicenseType" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLicenseNo"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:text="Email address"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tvLicenseType"
+                    app:layout_constraintTop_toBottomOf="@+id/etSubject" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etEmail"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tvLicenseNo"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLicenseNo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvIssuingState"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:text="How we can help?"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tvLicenseNo"
+                    app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etHelp"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="start"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:hint="input"
+                    android:inputType="textMultiLine"
+                    android:padding="@dimen/_10sdp"
+                    android:scrollbarStyle="insideOverlay"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvIssuingState"
+                    app:layout_constraintTop_toBottomOf="@+id/tvIssuingState" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@color/view_line_color_2"
+            app:layout_constraintBottom_toTopOf="@+id/tvSubmit" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubmit"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Submit"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

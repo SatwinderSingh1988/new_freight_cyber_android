@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.report.report_incident.ReportIncidentTwoFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/img_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Report An Accident"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/innerCs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/view2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+                    style="@style/TextView.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="If you require immediate assistance from police, fire, or ambulance services, please dial 000."
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/date_time_of_accident"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv3"
+                    app:layout_constraintTop_toBottomOf="@+id/etIncidentId" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etDateTimeOfAccident"
+                    style="@style/TextStyle1"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:drawableEnd="@drawable/date_of_birth"
+                    android:hint="dd/mm/yy"
+                    android:onClick="@{(v)-> vm.onClick(v)}"
+                    android:textColorHint="@color/et_text_hint_color"
+                    app:layout_constraintStart_toStartOf="@+id/tv3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv3"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Incident ID"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etIncidentId"
+                    style="@style/TextStyle1"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/text_black_bg"
+                    android:inputType="text"
+                    android:text="23B321"
+                    android:textColor="@color/grey"
+                    app:layout_constraintStart_toStartOf="@+id/tv3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv4"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Location of Accident"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv3"
+                    app:layout_constraintTop_toBottomOf="@+id/etDateTimeOfAccident" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etLocationOfAccident"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="Location of accident"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tv4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv5"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Job ID"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv4"
+                    app:layout_constraintTop_toBottomOf="@+id/etLocationOfAccident" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etJobId"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tv5"
+                    app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv6"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Vehicle Involved"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv5"
+                    app:layout_constraintTop_toBottomOf="@+id/etJobId" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etVehicleInvolved"
+                    style="@style/TextStyle1"
+                    android:onClick="@{(v)-> vm.onClick(v)}"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:drawableEnd="@drawable/img_down"
+                    android:hint="select(if applicable)"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintEnd_toEndOf="@+id/etJobId"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sbAnyVisibleInjuries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvAnyVisibleInjuries"
+                    app:layout_constraintEnd_toEndOf="@+id/etVehicleInvolved"
+                    app:layout_constraintTop_toTopOf="@+id/tvAnyVisibleInjuries"
+                    app:track="@drawable/switch_track" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAnyVisibleInjuries"
+                    style="@style/TextView.Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Any Visible Injuries"
+                    android:textColor="@color/white_3"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="@+id/etVehicleInvolved"
+                    app:layout_constraintTop_toBottomOf="@+id/etVehicleInvolved" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVisibleSub"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="List any injuries to drivers, jockey, or pedestrians"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvAnyVisibleInjuries"
+                    app:layout_constraintTop_toBottomOf="@+id/sbAnyVisibleInjuries" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/csAnyVisibleInjuries"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVisibleSub">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv10"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="Name"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/csAnyVisibleInjuries"
+                        app:layout_constraintTop_toTopOf="@+id/csAnyVisibleInjuries" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etName"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Enter Name"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv10" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv11"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Phone No"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/tv10"
+                        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etPhoneNo"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Enter Phone No"
+                        android:textColorHint="@color/et_text_hint_color"
+                        app:layout_constraintStart_toStartOf="@+id/tv11"
+                        app:layout_constraintTop_toBottomOf="@+id/tv11" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv12"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="Severity of Injury"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/tv11"
+                        app:layout_constraintTop_toBottomOf="@+id/etPhoneNo" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSeverityOfInjury"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="input"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintStart_toStartOf="@+id/tv12"
+                        app:layout_constraintTop_toBottomOf="@+id/tv12" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv13"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="Describe the injury"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/tv12"
+                        app:layout_constraintTop_toBottomOf="@+id/etSeverityOfInjury" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etDescribeTheInjury"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:hint="Discribe  The Injury"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tv13"
+                        app:layout_constraintTop_toBottomOf="@+id/tv13" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/cbVisibleAssetDamage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvVisibleAssetDamage"
+                    app:layout_constraintEnd_toEndOf="@+id/sbAnyVisibleInjuries"
+                    app:layout_constraintTop_toTopOf="@+id/tvVisibleAssetDamage"
+                    app:track="@drawable/switch_track" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVisibleAssetDamage"
+                    style="@style/TextView.Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Any Visible Asset Damages"
+                    android:textColor="@color/white_3"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/csAnyVisibleInjuries" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVisibleAssetDamageSub"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Describe damages to vehicles involved"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvVisibleAssetDamage"
+                    app:layout_constraintTop_toBottomOf="@+id/cbVisibleAssetDamage" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/csVisibleAssetDamage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVisibleAssetDamageSub">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv21"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="Asset Type"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/csVisibleAssetDamage" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etAssetType"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Asset Type (Auto Select from Job)"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv21" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv22"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="Vehicle Rego"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/etAssetType"
+                        app:layout_constraintTop_toBottomOf="@+id/etAssetType" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etVisibleAssetVehicleRego"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Enter Vehicle Rego"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv22"
+                        app:layout_constraintWidth_percent=".44" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv23"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VIN"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/etVisibleAssetVehicleVIN"
+                        app:layout_constraintTop_toTopOf="@+id/tv22" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etVisibleAssetVehicleVIN"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:hint="Enter VIN"
+                        android:textColorHint="@color/et_text_hint_color"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv23"
+                        app:layout_constraintWidth_percent=".44" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sbAnyExternalVehicleDamages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvAnyExternalVehicleDamages"
+                    app:layout_constraintEnd_toEndOf="@+id/etVehicleInvolved"
+                    app:layout_constraintTop_toTopOf="@+id/tvAnyExternalVehicleDamages"
+                    app:track="@drawable/switch_track" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAnyExternalVehicleDamages"
+                    style="@style/TextView.Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Any External Vehicle Damages"
+                    android:textColor="@color/white_3"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvAnyVisibleInjuries"
+                    app:layout_constraintTop_toBottomOf="@id/csVisibleAssetDamage" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAnyExternalVehicleDamagesSub"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Describe damages to vehicles involved"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvAnyExternalVehicleDamages"
+                    app:layout_constraintTop_toBottomOf="@+id/sbAnyExternalVehicleDamages" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/csAnyExternalVehicleDamages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAnyExternalVehicleDamagesSub">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv14"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="Vehicle Type"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etVehicleType"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Enter Vehicle Type"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv14" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv15"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Severity Level"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/tv14"
+                        app:layout_constraintTop_toBottomOf="@+id/etVehicleType" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSeverityLevel"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Security Level"
+                        android:textColorHint="@color/et_text_hint_color"
+                        app:layout_constraintStart_toStartOf="@+id/tv15"
+                        app:layout_constraintTop_toBottomOf="@+id/tv15" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv16"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="Vehicle Rego"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/tv15"
+                        app:layout_constraintTop_toBottomOf="@+id/etSeverityLevel" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etVehicleRego"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:hint="Enter Rego"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv16"
+                        app:layout_constraintWidth_percent=".44" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv17"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VIN"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/etVin"
+                        app:layout_constraintTop_toTopOf="@+id/tv16" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etVin"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="0dp"
+                        android:hint="Enter VIN"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintBottom_toBottomOf="@+id/etVehicleRego"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/etVehicleRego"
+                        app:layout_constraintWidth_percent=".44" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sbPropertyDamage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPropertyDamage"
+                    app:layout_constraintEnd_toEndOf="@+id/sbAnyExternalVehicleDamages"
+                    app:layout_constraintTop_toTopOf="@+id/tvPropertyDamage"
+                    app:track="@drawable/switch_track" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPropertyDamage"
+                    style="@style/TextView.Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Property Damage (if applicable)"
+                    android:textColor="@color/white_3"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvAnyExternalVehicleDamagesSub"
+                    app:layout_constraintTop_toBottomOf="@id/csAnyExternalVehicleDamages" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPropertyDamageSub"
+                    style="@style/TextView.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:text="Specify any property damage resulting from the accident."
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvPropertyDamage"
+                    app:layout_constraintTop_toBottomOf="@+id/sbPropertyDamage" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/csPropertyDamage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPropertyDamageSub">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv18"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="Description"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/csPropertyDamage" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etDescription"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Description Briefly"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv18" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVitness"
+                        style="@style/TextView.Header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="Witness Information (If any)"
+                        android:textColor="@color/white_3"
+                        android:textSize="@dimen/_17sdp"
+                        app:layout_constraintStart_toStartOf="@+id/tv18"
+                        app:layout_constraintTop_toBottomOf="@+id/etDescription" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv19"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="Name"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/tvVitness"
+                        app:layout_constraintTop_toBottomOf="@+id/tvVitness" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etWitnesName"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="input"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv19" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv20"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Phone No"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/etWitnesName"
+                        app:layout_constraintTop_toBottomOf="@+id/etWitnesName" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etWitnessPhone"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:hint="input"
+                        android:textColorHint="@color/et_text_hint_color"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tv20"
+                        app:layout_constraintTop_toBottomOf="@+id/tv20" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/cbPoliceAuth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPoliceAuth"
+                    app:layout_constraintEnd_toEndOf="@+id/sbPropertyDamage"
+                    app:layout_constraintTop_toTopOf="@+id/tvPoliceAuth"
+                    app:track="@drawable/switch_track" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPoliceAuth"
+                    style="@style/TextView.Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Police/Authorities Contacted"
+                    android:textColor="@color/white_3"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/csPropertyDamage" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/csPoliceAuth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/cbPoliceAuth">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv24"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="Police Report Number"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/csPoliceAuth" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etPoliceReportNumber"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Enter Number"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv24" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv25"
+                        style="@style/TextView.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="EMS/Rescue Services"
+                        android:textColor="@color/white_3"
+                        app:layout_constraintStart_toStartOf="@+id/etPoliceReportNumber"
+                        app:layout_constraintTop_toBottomOf="@+id/etPoliceReportNumber" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEMSRescueServices"
+                        style="@style/EditTextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:hint="Specify if contacted"
+                        android:inputType="text"
+                        android:textColorHint="@color/et_text_hint_color"
+                        android:textCursorDrawable="@null"
+                        app:layout_constraintEnd_toEndOf="@+id/etPoliceReportNumber"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv25" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUploadImage"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Upload images*"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/csPoliceAuth" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:scrollbars="none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUploadImage">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUploadImage">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvImages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/viewCertificate"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/gallery_images_item_list" />
+
+                        <View
+                            android:id="@+id/viewCertificate"
+                            android:layout_width="@dimen/_65sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:onClick="@{(v)->vm.onClick(v)}"
+                            android:background="@drawable/dash_background"
+                            app:layout_constraintBottom_toBottomOf="@+id/rvImages"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/rvImages"
+                            app:layout_constraintTop_toTopOf="@+id/rvImages" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgPlus"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:onClick="@{(v)->vm.onClick(v)}"
+                            android:src="@drawable/icon_add"
+                            app:layout_constraintBottom_toBottomOf="@+id/viewCertificate"
+                            app:layout_constraintEnd_toEndOf="@+id/viewCertificate"
+                            app:layout_constraintStart_toStartOf="@+id/viewCertificate"
+                            app:layout_constraintTop_toTopOf="@+id/viewCertificate" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </HorizontalScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@color/view_line_color_2"
+            app:layout_constraintBottom_toTopOf="@+id/tvNext" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNext"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Submit"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.ReportTransfer" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@{(bean.isSelect == false ? @drawable/rv_item_background_view : @drawable/rv_item_background_view_with_orange_stroke)}"
+        android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/img_flag"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:singleLine="true"
+            android:text="Hazard Identification"
+            app:layout_constraintBottom_toTopOf="@+id/tv2"
+            app:layout_constraintEnd_toStartOf="@+id/tvOld"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:text="Tue, 23 March 2024"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv1"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOld"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/brown"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text='Resolved'
+            android:textColor='@color/text_color_orange'
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

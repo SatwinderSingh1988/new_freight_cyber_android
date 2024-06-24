@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.VehicleInspection" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/csRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:onClick="@{(v)-> callback.onItemClick(v , bean, pos)}"
+        android:background="@drawable/rv_item_background_view"
+        android:backgroundTint="@color/black_2">
+
+
+        <RadioButton
+            android:id="@+id/imgCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean, pos)}"
+            android:checked="@{bean.value == true ? true : false}"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:buttonTint="@color/text_color_orange"
+            app:layout_constraintBottom_toBottomOf="@+id/tv2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{bean.text}"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean, pos)}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/tv2"
+            app:layout_constraintStart_toEndOf="@+id/imgCheck"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="Vehicle and Trailer"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean, pos)}"
+            android:textColor="@color/white_2"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv1"
+            tools:text="Vehicle and Trailer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

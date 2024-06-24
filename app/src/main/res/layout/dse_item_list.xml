@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.DSEModuleData" />
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:onClick="@{v -> callback.onItemClick(v , bean ,pos)}"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@drawable/rv_item_background_view">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img"
+            setImage="@{bean.image}"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:onClick="@{v -> callback.onItemClick(v , bean ,pos)}"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_fingerprint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:lineSpacingExtra="2dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{v -> callback.onItemClick(v , bean ,pos)}"
+            android:text="@{bean.textHeader}"
+            app:layout_constraintBottom_toBottomOf="@+id/img"
+            app:layout_constraintStart_toEndOf="@+id/img"
+            app:layout_constraintTop_toTopOf="@+id/img"
+            tools:text="Enable Fingerprint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubHeader"
+            style="@style/TextView.Light"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:text="@{bean.textSubHeader}"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{v -> callback.onItemClick(v , bean ,pos)}"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/img"
+            app:layout_constraintTop_toBottomOf="@+id/img"
+            tools:text="Learn the fundamental principles of safe driving, including the importance of following traffic laws, wearing seatbelts, and avoiding distractions." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTime"
+            style="@style/TextView.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:drawableStart="@drawable/img_time"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10sdp"
+            android:text="@{bean.textApproxTime}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvSubHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubHeader"
+            tools:text="Approximately 30 minutes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

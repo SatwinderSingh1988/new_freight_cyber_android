@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.InnerInspectionCheckList" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rv_item_background_view"
+        android:backgroundTint="@color/black_3">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:backgroundTint="@color/black_3"
+            android:drawableEnd="@drawable/img_comments"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@{bean.levels}"
+            tools:text="sdfafd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dash_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvComStatus"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Compliance status"
+            android:textColor="@color/grey2"
+            app:layout_constraintStart_toStartOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChecked"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:background="@drawable/text_black_bg"
+            android:backgroundTint="@color/black_4"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:onClick="@{(v)-> callback.onItemClick(v,bean,pos)}"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvComStatus"
+            android:text="Checked"
+            app:layout_constraintWidth_percent=".45"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvIssue"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:background="@drawable/text_black_bg"
+            android:backgroundTint="@color/black_4"
+            android:gravity="center"
+            android:onClick="@{(v)-> callback.onItemClick(v,bean,pos)}"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvChecked"
+            app:layout_constraintWidth_percent=".45"
+            android:text="Issue found" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAssetNotFit"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:background="@drawable/text_black_bg"
+            android:backgroundTint="@color/black_4"
+            android:gravity="center"
+            android:onClick="@{(v)-> callback.onItemClick(v,bean,pos)}"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChecked"
+            android:text="Asset not fit for use" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvComments"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Comments"
+            android:textColor="@color/grey2"
+            app:layout_constraintStart_toStartOf="@+id/tvAssetNotFit"
+            app:layout_constraintTop_toBottomOf="@+id/tvAssetNotFit" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/appCompatEditText"
+            style="@style/EditTextStyle2"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:drawableEnd="@drawable/img_enter"
+            android:hint="Input"
+            android:imeOptions="actionDone"
+            android:textColorHint="@color/grey"
+            android:layout_marginBottom="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvComments" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

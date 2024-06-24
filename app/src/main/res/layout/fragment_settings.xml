@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.settings.SettingsFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/img_back"
+            app:layout_constraintBottom_toBottomOf="@+id/tvUdi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvUdi" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUdi"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Settings"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSettings"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/tvDeleteAccount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack"
+            tools:itemCount="2"
+            tools:listitem="@layout/settings_item_list" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeleteAccount"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:background="@drawable/btn_text_view_bg_4"
+            android:drawableStart="@drawable/img_delete_2"
+            android:paddingHorizontal="@dimen/_70sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Delete Account"
+            android:textColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.CreateProfileData" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:onClick="@{(v)-> callback.onItemClick(v , bean , pos)}"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/rv_item_background_view">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgFingerprint"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            setImage="@{bean.image}"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean , pos)}"
+            tools:src="@drawable/img_fingerprint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthType"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:lineSpacingExtra="2dp"
+            android:text="@{bean.text}"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean , pos)}"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFingerprint"
+            app:layout_constraintStart_toEndOf="@+id/imgFingerprint"
+            app:layout_constraintTop_toTopOf="@+id/imgFingerprint"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Enable Fingerprint" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgNext"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean , pos)}"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:rotation="180"
+            android:src="@drawable/img_back"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAuthType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAuthType" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

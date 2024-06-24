@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.ewd.switch_driver_biomatrics.SwitchDriverBioFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/img_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="Confirm Changes"
+            android:textSize="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSub"
+            style="@style/TextView.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Switch using biometric authentication method"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/black_4"
+            android:onClick="@{(v)-> vm.onClick(v)}"
+            app:layout_constraintEnd_toEndOf="@+id/tvSub"
+            app:layout_constraintStart_toStartOf="@+id/tvSub"
+            app:layout_constraintTop_toBottomOf="@+id/tvSub">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgFingerprint"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:onClick="@{(v)-> vm.onClick(v)}"
+                android:src="@drawable/img_fingerprint"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAuthType"
+                style="@style/TextView.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:onClick="@{(v)-> vm.onClick(v)}"
+                android:text="Switch using Biometric"
+                android:textColor="@color/white_2"
+                app:layout_constraintBottom_toBottomOf="@+id/imgFingerprint"
+                app:layout_constraintStart_toEndOf="@+id/imgFingerprint"
+                app:layout_constraintTop_toTopOf="@+id/imgFingerprint" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

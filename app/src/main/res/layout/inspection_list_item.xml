@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.InnerInspectionCheckList" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Medium"
+            android:onClick="@{(v)-> callback.onItemClick(v,bean,pos)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_text_view_bg"
+            android:backgroundTint="@color/black_3"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@{bean.levels}"
+            tools:text="Levels"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgUpDown"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/img_up_vector"
+            android:rotation="180"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+            app:layout_constraintEnd_toEndOf="@+id/tvHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvHeader" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/csDetailFlat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/black_3"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv1"
+                style="@style/TextView.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:background="@drawable/btn_text_view_bg"
+                android:backgroundTint="@color/black_3"
+                android:drawableEnd="@drawable/img_comments"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@{bean.levels}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/dash_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvComStatus"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                tools:text="Compliance status"
+                android:text="@{bean.subText}"
+                android:textColor="@color/grey2"
+                app:layout_constraintStart_toStartOf="@+id/tv1"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@+id/tvComStatus"
+                app:layout_constraintTop_toBottomOf="@+id/tvComStatus">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/tvChecked"
+                    style="@style/radioButton_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/karla_regular"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:text="@{bean.checkBoxOneText}"
+                    tools:text="In good condition"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvComStatus"
+                    app:layout_constraintTop_toBottomOf="@+id/tvComStatus" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/tvIssue"
+                    style="@style/radioButton_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@{bean.checkBoxTwoText}"
+                    android:fontFamily="@font/karla_regular"
+                    android:paddingStart="@dimen/_5sdp"
+                    tools:text="Issue found"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+            </RadioGroup>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvComments"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Comments"
+                android:textColor="@color/grey2"
+                app:layout_constraintStart_toStartOf="@+id/tvComStatus"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/appCompatEditText"
+                style="@style/EditTextStyle2"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:drawableEnd="@drawable/img_enter"
+                android:hint="Input"
+                android:imeOptions="actionDone"
+                android:textColorHint="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvComments" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTapEnter"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:text="Tap Enter to add comment."
+                android:textColor="@color/grey2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/appCompatEditText"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatEditText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

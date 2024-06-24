@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.response.DriverLicenseData" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/rv_item_background_view">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:singleLine="true"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:text="Commercial Driver's Licence (CDL)"
+            app:layout_constraintEnd_toStartOf="@+id/tvOld"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgRight"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            licenseDate2='@{bean.license_expiry_date}'
+            tools:text="Expiry Date: 12/30"
+            android:textColor="@color/grey"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgRight"
+            app:layout_constraintStart_toStartOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv1"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOld"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/brown"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text='OLD'
+            android:textColor='@color/text_color_orange'
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintWidth_percent=".2"
+            app:layout_constraintBottom_toBottomOf="@+id/imgRight"
+            app:layout_constraintEnd_toStartOf="@+id/imgRight"
+            app:layout_constraintTop_toTopOf="@+id/imgRight" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgRight"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:padding="@dimen/_10sdp"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:src="@drawable/img_back"
+            android:rotation="180"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

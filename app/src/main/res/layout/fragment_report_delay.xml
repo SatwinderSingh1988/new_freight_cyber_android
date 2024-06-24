@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.report.report_delay.ReportDelayFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/img_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Report a delay"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/innerCs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/view2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+                    style="@style/TextView.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Please provide details. Please ensure you are in a safe location before logging your report."
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Incident ID"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvIncidentId"
+                    style="@style/TextStyle1"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="ID232-23"
+                    android:textColor="@color/grey"
+                    android:background="@drawable/text_black_bg"
+                    app:layout_constraintStart_toStartOf="@+id/tv2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv3"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Job ID"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv2"
+                    app:layout_constraintTop_toBottomOf="@+id/etReportDate" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etJobId"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tv2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv4"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delay Reason"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv3"
+                    app:layout_constraintTop_toBottomOf="@+id/etJobId" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etDelayReson"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:layout_marginStart="0dp"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tv4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv4"
+                    app:layout_constraintWidth_percent=".43" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv44"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Delay Period"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/etDelayPeriod"
+                    app:layout_constraintTop_toBottomOf="@+id/etJobId" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etDelayPeriod"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv4"
+                    app:layout_constraintWidth_percent=".43" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv5"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Report Date"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv4"
+                    app:layout_constraintTop_toBottomOf="@+id/tvIncidentId" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etReportDate"
+                    style="@style/TextStyle1"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="0dp"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:hint="Auto -populate "
+                    android:textColorHint="@color/et_text_hint_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv5"
+                    app:layout_constraintWidth_percent=".45" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv6"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delay Date"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/etDelayDate"
+                    app:layout_constraintTop_toTopOf="@+id/tv5" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etDelayDate"
+                    style="@style/TextStyle1"
+                    android:layout_width="0dp"
+                    android:hint="Input Date"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:textColorHint="@color/et_text_hint_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/etReportDate"
+                    app:layout_constraintWidth_percent=".45" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv7"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Delay Location"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv5"
+                    app:layout_constraintTop_toBottomOf="@+id/etDelayReson" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etDelayLocation"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv7"
+                    app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv8"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Impact of Delay"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv7"
+                    app:layout_constraintTop_toBottomOf="@+id/etDelayLocation" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etImpactOfDelay"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv8"
+                    app:layout_constraintTop_toBottomOf="@+id/tv8" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@color/view_line_color_2"
+            app:layout_constraintBottom_toTopOf="@+id/tvSubmit" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubmit"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Submit Delay Report"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

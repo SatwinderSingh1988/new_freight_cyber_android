@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.report_incident.ReportIncidentFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/img_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Incident Report"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            style="@style/TextView.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Add the Incident if there’s any for this job"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader" />
+
+        <CheckBox
+            android:id="@+id/cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:buttonTint="@color/text_color_orange"
+            android:fontFamily="@font/karla_medium"
+            android:paddingStart="@dimen/_8sdp"
+            android:text="Is there an Incident to be Reported?"
+            android:textColor="@color/white_2"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/view_line_color_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/innerCs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv2"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Type"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/etType"
+                style="@style/TextStyle1"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:drawableEnd="@drawable/img_down"
+                android:hint="Select"
+                android:onClick="@{(v)-> vm.onClick(v)}"
+                android:textColorHint="@color/et_text_hint_color"
+                app:layout_constraintStart_toStartOf="@+id/tv2"
+                app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv3"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Incident ID"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv2"
+                app:layout_constraintTop_toBottomOf="@+id/etType" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etIncidentId"
+                style="@style/EditTextStyle2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintStart_toStartOf="@+id/tv2"
+                app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbIsThereAssetDamage"
+                style="@style/CustomCheckbox03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:checked="false"
+                android:fontFamily="@font/karla_regular"
+                android:paddingStart="@dimen/_5sdp"
+                android:text="Is there asset damage?"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toStartOf="@+id/tv3"
+                app:layout_constraintTop_toBottomOf="@+id/etIncidentId" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv4"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Driver Name"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/cbIsThereAssetDamage"
+                app:layout_constraintTop_toBottomOf="@+id/cbIsThereAssetDamage" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etDriverName"
+                style="@style/EditTextStyle2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintStart_toStartOf="@+id/tv4"
+                app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv5"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Date"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/cbIsThereAssetDamage"
+                app:layout_constraintTop_toBottomOf="@+id/etDriverName" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etDate"
+                style="@style/EditTextStyle2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintStart_toStartOf="@+id/tv5"
+                app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv6"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Hour"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv5"
+                app:layout_constraintTop_toBottomOf="@+id/etDate" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etHour"
+                style="@style/EditTextStyle2"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="0dp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv6"
+                app:layout_constraintWidth_percent=".29" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv7"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Min"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/etMin"
+                app:layout_constraintTop_toTopOf="@+id/tv6" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etMin"
+                style="@style/EditTextStyle2"
+                android:layout_width="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toStartOf="@+id/etAMPM"
+                app:layout_constraintStart_toEndOf="@+id/etHour"
+                app:layout_constraintTop_toTopOf="@+id/etHour"
+                app:layout_constraintWidth_percent=".29" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAMPM"
+                style="@style/EditTextStyle2"
+                android:layout_width="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:drawableEnd="@drawable/img_down"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etMin"
+                app:layout_constraintWidth_percent=".29" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv8"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Rego"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv10"
+                app:layout_constraintTop_toBottomOf="@+id/etUnitNo" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etRego"
+                style="@style/EditTextStyle2"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="0dp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv8"
+                app:layout_constraintWidth_percent=".43" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv9"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incident Site"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/etIncidentSite"
+                app:layout_constraintTop_toTopOf="@+id/tv8" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etIncidentSite"
+                style="@style/EditTextStyle2"
+                android:layout_width="0dp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etRego"
+                app:layout_constraintWidth_percent=".43" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv10"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Unit No"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv6"
+                app:layout_constraintTop_toBottomOf="@+id/etHour" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etUnitNo"
+                style="@style/EditTextStyle2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv10"
+                app:layout_constraintTop_toBottomOf="@+id/tv10" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv11"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Location"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv6"
+                app:layout_constraintTop_toBottomOf="@+id/etRego" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etLocation"
+                style="@style/EditTextStyle2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv11"
+                app:layout_constraintTop_toBottomOf="@+id/tv11" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv12"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Witness details"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv6"
+                app:layout_constraintTop_toBottomOf="@+id/etLocation" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv13"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Name"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv6"
+                app:layout_constraintTop_toBottomOf="@+id/tv12" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etName"
+                style="@style/EditTextStyle2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv13"
+                app:layout_constraintTop_toBottomOf="@+id/tv13" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv14"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Phone Number"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv6"
+                app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPhoneNo"
+                style="@style/EditTextStyle2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="input"
+                android:inputType="text"
+                android:textColorHint="@color/et_text_hint_color"
+                android:textCursorDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv14"
+                app:layout_constraintTop_toBottomOf="@+id/tv14" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv15"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Upload Image"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toStartOf="@+id/tv6"
+                app:layout_constraintTop_toBottomOf="@+id/etPhoneNo" />
+
+
+            <View
+                android:id="@+id/viewUploadImage"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/dash_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv15"
+                app:layout_constraintTop_toBottomOf="@+id/tv15" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPlus"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:onClick="@{(v)->vm.onClick(v)}"
+                android:src="@drawable/icon_add"
+                app:layout_constraintBottom_toBottomOf="@+id/viewUploadImage"
+                app:layout_constraintEnd_toEndOf="@+id/viewUploadImage"
+                app:layout_constraintStart_toStartOf="@+id/viewUploadImage"
+                app:layout_constraintTop_toTopOf="@+id/viewUploadImage" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@color/view_line_color_2"
+            app:layout_constraintBottom_toTopOf="@+id/tvNext" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNext"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Submit"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

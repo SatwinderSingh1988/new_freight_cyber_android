@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.dialog.BaseCustomDialog.Listener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rv_item_background_view">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgHam"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:elevation="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:onClick="@{(v)-> callback.onViewClick(v)}"
+            android:src="@drawable/_up_switch_driver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch Driver"
+            app:layout_constraintEnd_toEndOf="@+id/imgHam"
+            app:layout_constraintStart_toStartOf="@+id/imgHam"
+            app:layout_constraintTop_toBottomOf="@+id/imgHam" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubHeader"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Are you sure you want to switch primary driver for this route?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCanBe"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="This can be switched back again later."
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubHeader" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvYes"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:minHeight="@dimen/_30sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:onClick="@{(v)-> callback.onViewClick(v)}"
+            android:text="Yes, switch driver"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCanBe"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNo"
+            style="@style/EditTextStyle2"
+            android:focusable="false"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:onClick="@{(v)-> callback.onViewClick(v)}"
+            android:gravity="center"
+            android:text="No, keep me primary driver"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvYes"
+            app:layout_constraintStart_toStartOf="@+id/tvYes"
+            app:layout_constraintTop_toBottomOf="@+id/tvYes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

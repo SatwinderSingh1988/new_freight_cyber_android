@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.report.report_damage.ReportDamageFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/img_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Report item damage"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/innerCs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/view2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+                    style="@style/TextView.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Please provide details of cargo damage during loading or unloading or transportation"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Incident ID"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etIncidentId"
+                    style="@style/TextStyle1"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="232D32D"
+                    android:background="@drawable/text_black_bg"
+                    android:textColor="@color/grey"
+                    app:layout_constraintStart_toStartOf="@+id/tv2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv3"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Job ID"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv2"
+                    app:layout_constraintTop_toBottomOf="@+id/etIncidentId" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tJobId"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="input"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:onClick="@{(v)-> vm.onClick(v)}"
+                    app:layout_constraintStart_toStartOf="@+id/tv2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv5"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item Type"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv3"
+                    app:layout_constraintTop_toBottomOf="@+id/tJobId" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etItemType"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="0dp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv5"
+                    app:layout_constraintWidth_percent=".45" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv6"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item ID"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/etItemId"
+                    app:layout_constraintTop_toTopOf="@+id/tv5" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etItemId"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="0dp"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/etItemType"
+                    app:layout_constraintWidth_percent=".45" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv7"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Damage Location"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv5"
+                    app:layout_constraintTop_toBottomOf="@+id/etItemType" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etDamageLocation"
+                    style="@style/TextStyle1"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="Select Location"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:singleLine="true"
+                    android:drawableEnd="@drawable/img_down"
+                    android:textColorHint="@color/et_text_hint_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv7"
+                    app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv8"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extent of Cargo Damage"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv7"
+                    app:layout_constraintTop_toBottomOf="@+id/etDamageLocation" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etCargoDamage"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="Describe the extent of damage to the cargo"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv8"
+                    app:layout_constraintTop_toBottomOf="@+id/tv8" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUploadImage"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Upload images*"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tv8"
+                    app:layout_constraintTop_toBottomOf="@+id/etCargoDamage" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:scrollbars="none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUploadImage">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUploadImage">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvImages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/viewCertificate"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/gallery_images_item_list" />
+
+                        <View
+                            android:id="@+id/viewCertificate"
+                            android:layout_width="@dimen/_65sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:onClick="@{(v)->vm.onClick(v)}"
+                            android:background="@drawable/dash_background"
+                            app:layout_constraintBottom_toBottomOf="@+id/rvImages"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/rvImages"
+                            app:layout_constraintTop_toTopOf="@+id/rvImages" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgPlus"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:onClick="@{(v)->vm.onClick(v)}"
+                            android:src="@drawable/icon_add"
+                            app:layout_constraintBottom_toBottomOf="@+id/viewCertificate"
+                            app:layout_constraintEnd_toEndOf="@+id/viewCertificate"
+                            app:layout_constraintStart_toStartOf="@+id/viewCertificate"
+                            app:layout_constraintTop_toTopOf="@+id/viewCertificate" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </HorizontalScrollView>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@color/view_line_color_2"
+            app:layout_constraintBottom_toTopOf="@+id/tvSubmit" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubmit"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Submit"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

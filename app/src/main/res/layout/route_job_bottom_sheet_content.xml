@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <FrameLayout
+        android:id="@+id/standardBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rv_item_background_view_2"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:id="@+id/drag_handle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/showRouteBottomSheet"
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:background="@drawable/rv_item_background_view_2"
+                android:backgroundTint="@color/black"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/fragment_home_drag_handle"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_3sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:backgroundTint="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgClose"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/img_close2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHeader1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHeader1"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="ETA"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/fragment_home_drag_handle"
+                    app:layout_constraintStart_toStartOf="@+id/fragment_home_drag_handle"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_drag_handle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTime"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="1 hr 8 m(120 mi)"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/imgSearch"
+                    app:layout_constraintStart_toEndOf="@+id/imgClose"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHeader1" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Next Rest Area: 25 Km"
+                    android:paddingHorizontal="@dimen/_30sdp"
+                    android:drawableStart="@drawable/map_rest_icon"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTime"
+                    app:layout_constraintStart_toStartOf="@+id/tvTime"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgSearch"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/img_search"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgClose"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgClose" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchBottomSheet"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:background="@drawable/rv_item_background_view_2"
+            android:backgroundTint="@color/black_3"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:hint="Search..."
+                android:textCursorDrawable="@null"
+                android:backgroundTint="@color/white_3"
+                android:textColorHint="@color/grey"
+                android:drawablePadding="@dimen/_5sdp"
+                android:drawableStart="@drawable/img_search_2"
+                android:background="@drawable/et_search_view"
+                app:layout_constraintEnd_toStartOf="@+id/imgBack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgBack"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/img_close2"
+                android:onClick="@{(v)->callback.onViewClick(v)}"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/etSearch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etSearch" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearch"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="vertical"
+                android:layout_marginEnd="@dimen/_12sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSearch"
+                app:spanCount="3"
+                tools:itemCount="6"
+                tools:listitem="@layout/search_botom_sheet_list_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

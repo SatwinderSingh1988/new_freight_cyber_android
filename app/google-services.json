@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "741281044144",
+    "project_id": "freight-cyber-driver-app",
+    "storage_bucket": "freight-cyber-driver-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741281044144:android:e2b30988e5d907c19b8d75",
+        "android_client_info": {
+          "package_name": "com.app.freightCyber"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2ZQWxTltJn1xsWspJHyGDmn7kpdQdkmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741281044144:android:0c3213584aba5a139b8d75",
+        "android_client_info": {
+          "package_name": "com.app.freightCyber.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2ZQWxTltJn1xsWspJHyGDmn7kpdQdkmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741281044144:android:f60a9280f2ebee6a9b8d75",
+        "android_client_info": {
+          "package_name": "com.app.freightCyber.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2ZQWxTltJn1xsWspJHyGDmn7kpdQdkmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

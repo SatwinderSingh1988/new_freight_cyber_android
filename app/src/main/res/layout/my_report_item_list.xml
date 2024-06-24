@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.AuthenticationData" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/rv_item_background_view">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:singleLine="true"
+            android:text="Mechanical issues"
+            app:layout_constraintEnd_toStartOf="@+id/tvOld"
+            app:layout_constraintStart_toEndOf="@+id/imgRight"
+            app:layout_constraintTop_toTopOf="@+id/imgRight" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:text="Tue, 23 March 2024"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgRight"
+            app:layout_constraintEnd_toStartOf="@+id/tvOld"
+            app:layout_constraintStart_toStartOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOld"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/brown"
+            android:gravity="center"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text='RESOLVED'
+            android:textColor='@color/text_color_orange'
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgRight"
+            app:layout_constraintWidth_percent=".2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:onClick="@{(v)->callback.onItemClick(v , bean , pos)}"
+            android:src="@drawable/img_flag_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.DriveArrangement" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/csRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)-> callback.onItemClick(v, bean , pos)}"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/rv_item_background_view">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgFingerprint"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_12sdp"
+            setImage="@{bean.image}"
+            tools:src="@drawable/profile_solo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvType"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="@{bean.type}"
+            app:layout_constraintStart_toEndOf="@+id/imgFingerprint"
+            app:layout_constraintTop_toTopOf="@+id/imgFingerprint"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Solo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTypeDesc"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="@{bean.typeDesc}"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@+id/switchBtn"
+            app:layout_constraintStart_toEndOf="@+id/imgFingerprint"
+            app:layout_constraintTop_toBottomOf="@+id/tvType"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Only one person in the vehicle responsible for driving." />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/switchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_up_vector"
+            android:rotation="90"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

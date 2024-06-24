@@ -1,0 +1,42 @@
+*.iml
+.idea
+.gradle
+# built application files
+*.apk
+*.ap_
+# generated files
+bin/
+gen/
+/local.properties
+local.properties
+
+#Build
+**/build/
+/build
+
+#Macintosh
+.DS_Store
+
+#gradle
+.gradle/
+versionTag
+buildNumber
+
+/captures
+.externalNativeBuild
+.cxx
+
+# Log Files
+*.log
+
+# Android Studio captures folder
+captures/
+
+# Version control
+vcs.xml
+
+# lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/

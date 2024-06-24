@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/rv_item_background_view"
+        android:backgroundTint="@color/black_3"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmployerName"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Transport Operator"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPost"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/grey"
+            android:text="Post on Sun, Mar 25 2024"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvEmployerName"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmployerName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPickupCustomerName"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pickup - Customer name"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textColor="@color/grey"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="@+id/tvPost"
+            app:layout_constraintStart_toEndOf="@+id/imgLocationSymbol"
+            app:layout_constraintTop_toBottomOf="@+id/tvPost" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPickupAddress"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Street 12, Ind Area, Oak Avenue, USA"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="@+id/tvPickupCustomerName"
+            app:layout_constraintStart_toStartOf="@+id/tvPickupCustomerName"
+            app:layout_constraintTop_toBottomOf="@+id/tvPickupCustomerName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgLocationSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/location_symbol"
+            app:layout_constraintStart_toStartOf="@+id/tvPost"
+            app:layout_constraintTop_toBottomOf="@+id/tvPickupCustomerName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/location_trail"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/location_trail"
+            app:layout_constraintBottom_toTopOf="@+id/imgLocationSymbol2"
+            app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol"
+            app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol"
+            app:layout_constraintTop_toBottomOf="@+id/imgLocationSymbol" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPickupTime"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pickup on: Mon, Mar 23 - 12:20 PM"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="@+id/tvPickupAddress"
+            app:layout_constraintStart_toStartOf="@+id/tvPickupAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvPickupAddress" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeliveryCustomerName"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Delivery - Customer name"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textColor="@color/grey"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="@+id/tvPost"
+            app:layout_constraintStart_toEndOf="@+id/imgLocationSymbol2"
+            app:layout_constraintTop_toBottomOf="@+id/tvPickupTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeliveryAddress"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Street 12, Ind Area, Oak Avenue, USA"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDeliveryCustomerName"
+            app:layout_constraintStart_toStartOf="@+id/tvDeliveryCustomerName"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeliveryCustomerName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgLocationSymbol2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/location_symbol_2"
+            app:layout_constraintStart_toStartOf="@+id/tvPost"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeliveryCustomerName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeliveryTime"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Delivery on: Mon, Mar 23 - 12:20 PM"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDeliveryAddress"
+            app:layout_constraintStart_toStartOf="@+id/tvDeliveryAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeliveryAddress" />
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/dash_color"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDeliveryAddress"
+            app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol2"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeliveryTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Distance"
+            android:textColor="@color/grey"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintStart_toStartOf="@+id/viewLine"
+            app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDistance"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="500mi"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv"
+            app:layout_constraintTop_toBottomOf="@+id/tv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Distance"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toStartOf="@+id/tvViewInfo"
+            app:layout_constraintStart_toEndOf="@+id/tv"
+            app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWeight"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="8k Tons"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/tv2"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvViewInfo"
+            style="@style/TextView.SubHeader"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:text="View Info"
+            android:onClick="@{(v)-> callback.onItemClick(v , bean , pos)}"
+            android:textColor="@color/dark_black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWeight"
+            app:layout_constraintEnd_toEndOf="@+id/viewLine"
+            app:layout_constraintTop_toTopOf="@+id/tv2"
+            app:layout_constraintWidth_percent=".22" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

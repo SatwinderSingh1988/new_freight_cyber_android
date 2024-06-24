@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.delivery_note.DeliveryNoteFragmentVM" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/img_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Delivery Note"
+            android:textSize="@dimen/_22sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/innerCs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHeader">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+                    style="@style/TextView.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Complete the delivery declaration for this job"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    android:backgroundTint="@color/black_3"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCustomerName"
+                        style="@style/TextView.Header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="Customer Name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPost"
+                        style="@style/TextView.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="Post on Sun, Mar 25 2024"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_13sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvCustomerName"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCustomerName" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPickupCustomerName"
+                        style="@style/TextView.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="Pickup - Customer name"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_13sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPost"
+                        app:layout_constraintStart_toEndOf="@+id/imgLocationSymbol"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPost" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPickupAddress"
+                        style="@style/TextView.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:text="Street 12, Ind Area, Oak Avenue, USA"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPickupCustomerName"
+                        app:layout_constraintStart_toStartOf="@+id/tvPickupCustomerName"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPickupCustomerName" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgLocationSymbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/location_symbol"
+                        app:layout_constraintStart_toStartOf="@+id/tvPost"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPickupCustomerName" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/location_trail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:src="@drawable/location_trail"
+                        app:layout_constraintBottom_toTopOf="@+id/imgLocationSymbol2"
+                        app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol"
+                        app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol"
+                        app:layout_constraintTop_toBottomOf="@+id/imgLocationSymbol" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPickupTime"
+                        style="@style/TextView.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Pickup on: Mon, Mar 23 - 12:20 PM"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_13sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPickupAddress"
+                        app:layout_constraintStart_toStartOf="@+id/tvPickupAddress"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPickupAddress" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDeliveryCustomerName"
+                        style="@style/TextView.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="Delivery Business name"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_13sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPost"
+                        app:layout_constraintStart_toEndOf="@+id/imgLocationSymbol2"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPickupTime" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDeliveryAddress"
+                        style="@style/TextView.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:text="Street 12, Ind Area, Oak Avenue, USA"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDeliveryCustomerName"
+                        app:layout_constraintStart_toStartOf="@+id/tvDeliveryCustomerName"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDeliveryCustomerName" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgLocationSymbol2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/location_symbol_2"
+                        app:layout_constraintStart_toStartOf="@+id/tvPost"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDeliveryCustomerName" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDeliveryTime"
+                        style="@style/TextView.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:text="Delivery on: Mon, Mar 23 - 12:20 PM"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_13sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDeliveryAddress"
+                        app:layout_constraintStart_toStartOf="@+id/tvDeliveryAddress"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDeliveryAddress" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/viewLine"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/dash_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvJobId"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Job ID"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tv1"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etJobId"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:focusable="false"
+                    android:text="2wd-21"
+                    android:background="@drawable/text_black_bg"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:inputType="text"
+                    android:textColor="@color/grey"
+                    android:onClick="@{(v)-> vm.onClick(v)}"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tvJobId"
+                    app:layout_constraintTop_toBottomOf="@+id/tvJobId" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDeliveryRemark"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:text="Delivery Remarks"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tvUploadImage"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/eetDeliveryRemark"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:hint="input"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tvDeliveryRemark"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDeliveryRemark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUploadImage"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upload images"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvReceiverName"
+                    app:layout_constraintTop_toBottomOf="@+id/etReceiverNAme" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUploadImage">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUploadImage">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvImages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/viewAddImage"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:itemCount="1"
+                            tools:listitem="@layout/gallery_images_item_list" />
+
+                        <View
+                            android:id="@+id/viewAddImage"
+                            android:layout_width="@dimen/_65sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:onClick="@{(v)-> vm.onClick(v)}"
+                            android:background="@drawable/dash_background"
+                            app:layout_constraintBottom_toBottomOf="@+id/rvImages"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/rvImages"
+                            app:layout_constraintTop_toTopOf="@+id/rvImages" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgPlus"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:onClick="@{(v)->vm.onClick(v)}"
+                            android:src="@drawable/icon_add"
+                            app:layout_constraintBottom_toBottomOf="@+id/viewAddImage"
+                            app:layout_constraintEnd_toEndOf="@+id/viewAddImage"
+                            app:layout_constraintStart_toStartOf="@+id/viewAddImage"
+                            app:layout_constraintTop_toTopOf="@+id/viewAddImage" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </HorizontalScrollView>
+
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReceiverName"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Receiver Name (Customer)"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tvJobId"
+                    app:layout_constraintTop_toBottomOf="@+id/etJobId" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etReceiverNAme"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:hint="input"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:inputType="text"
+                    android:textColorHint="@color/et_text_hint_color"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintStart_toStartOf="@+id/tvReceiverName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReceiverName" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSign"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Customer Signature"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tvDeliveryRemark"
+                    app:layout_constraintTop_toBottomOf="@+id/eetDeliveryRemark" />
+
+                <View
+                    android:id="@+id/customerSignView"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:onClick="@{(v)-> vm.onClick(v)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSign" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDriverSign"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Driver Signature"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/white_3"
+                    app:layout_constraintStart_toStartOf="@+id/tvSign"
+                    app:layout_constraintTop_toBottomOf="@+id/customerSignView" />
+
+                <View
+                    android:id="@+id/driverSignView"
+                    style="@style/EditTextStyle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:onClick="@{(v)-> vm.onClick(v)}"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvDriverSign"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDriverSign" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:background="@color/view_line_color_3"
+                    app:layout_constraintTop_toBottomOf="@+id/driverSignView"
+                    android:layout_marginTop="@dimen/_15sdp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNext"
+                    style="@style/TextView.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/btn_text_view_bg"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:backgroundTint="@color/grey"
+                    android:gravity="center"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:text="Next"
+                    android:textColor="@color/view_line_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

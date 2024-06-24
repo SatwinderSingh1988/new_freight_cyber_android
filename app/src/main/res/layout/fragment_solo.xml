@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.compliance.driver_details.SoloFragmentVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:background ="@color/black"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/csProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/rv_item_background_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgFingerprint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_18sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/profile_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader"
+                style="@style/TextView.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="Jhon Doe"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:textColor="@color/white_3"
+                app:layout_constraintStart_toEndOf="@+id/imgFingerprint"
+                app:layout_constraintTop_toTopOf="@+id/imgFingerprint"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SOI-XXXXX-YYYYMMDD"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/imgFingerprint"
+                app:layout_constraintStart_toStartOf="@+id/tvHeader" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Vehicle Registration"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/csProfile" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvVehicleReg"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Vehicle Registration"
+            android:textColor="@color/white_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv1"
+            app:layout_constraintWidth_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv11"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time Zone"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvTimeZone"
+            app:layout_constraintTop_toTopOf="@+id/tv1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTimeZone"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="(EST)"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvVehicleReg"
+            app:layout_constraintWidth_percent=".45" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/view_line_color_2"
+            app:layout_constraintTop_toBottomOf="@+id/tvVehicleReg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Driver Base"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvVehicleReg"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDriverBase"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="123 Main Street, Anytown, USA"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv2"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv3"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Record Keeper Location"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvVehicleReg"
+            app:layout_constraintTop_toBottomOf="@+id/tvDriverBase" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRecordKeeperLocation"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="56 Elm Street, Othertown, USA"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv3"
+            app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv4"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle Rego"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvVehicleReg"
+            app:layout_constraintTop_toBottomOf="@+id/tvRecordKeeperLocation" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvVehicleRego"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="ABC891"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv4"
+            app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv6"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accreditation Number"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvVehicleReg"
+            app:layout_constraintTop_toBottomOf="@+id/tvVehicleRego" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAccreditationNumber"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="54883423"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv6"
+            app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv7"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Work and Rest hours"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvAccreditationNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvAccreditationNumber" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWorkAndRestHours"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="Work and Rest hour option"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv7"
+            app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLicense"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:backgroundTint="@color/black_3"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:drawableEnd="@drawable/img_up_vector"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="start|center_vertical"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:text="License"
+            android:textColor="@color/view_line_color"
+            app:layout_constraintStart_toStartOf="@+id/tvWorkAndRestHours"
+            app:layout_constraintTop_toBottomOf="@+id/tvWorkAndRestHours" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv8"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="License Type"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvLicense"
+            app:layout_constraintTop_toBottomOf="@+id/tvLicense" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLicenseType"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="ABC891"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv8"
+            app:layout_constraintTop_toBottomOf="@+id/tv8" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv9"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="License Number"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvLicenseType"
+            app:layout_constraintTop_toBottomOf="@+id/tvLicenseType" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLicenseNumber"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="54883423"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv9"
+            app:layout_constraintTop_toBottomOf="@+id/tv9" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv10"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Card Number"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvLicenseNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvLicenseNumber" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCardNumber"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="1234 5678 9012 3456"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv10"
+            app:layout_constraintTop_toBottomOf="@+id/tv10" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv12"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="License Expiry Date"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCardNumber" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLicenseExpiryDate"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="2025-10-31"
+            android:textColor="@color/white_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv12"
+            app:layout_constraintWidth_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv13"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Issuing State"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvIssueDate"
+            app:layout_constraintTop_toTopOf="@+id/tv12" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvIssueDate"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="California"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv12"
+            app:layout_constraintWidth_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv14"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="License Type"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvLicense"
+            app:layout_constraintTop_toBottomOf="@+id/tvLicenseExpiryDate" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddress"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="ABC891"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv14"
+            app:layout_constraintTop_toBottomOf="@+id/tv14" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv15"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Post Code"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPostCode"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="90201"
+            android:textColor="@color/white_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv15"
+            app:layout_constraintWidth_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv16"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Country"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvCountry"
+            app:layout_constraintTop_toTopOf="@+id/tv15" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCountry"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="United States"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv16"
+            app:layout_constraintWidth_percent=".45" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/view_line_color_2"
+            app:layout_constraintTop_toBottomOf="@+id/tvPostCode" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/csProfile2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rv_item_background_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/profile_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader2"
+                style="@style/TextView.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="Jhon Doe"
+                android:textColor="@color/white_3"
+                app:layout_constraintBottom_toTopOf="@+id/tvSub2"
+                app:layout_constraintStart_toEndOf="@+id/img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub2"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="SOI-XXXXX-YYYYMMDD"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img"
+                app:layout_constraintTop_toBottomOf="@+id/tvHeader2"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv17"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State/territory of license"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/csProfile2"
+            app:layout_constraintTop_toBottomOf="@+id/csProfile2" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStateTerritory"
+            style="@style/TextView.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="Vehicle Registration"
+            android:textColor="@color/white_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv17"
+            app:layout_constraintTop_toBottomOf="@+id/tv17" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

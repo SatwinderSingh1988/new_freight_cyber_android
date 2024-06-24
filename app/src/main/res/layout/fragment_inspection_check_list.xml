@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.asset_checklist.inspection.InspectionCheckListFragmentVM"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/img_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/view">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/innerCs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintTop_toBottomOf="@+id/imgBack">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUdi"
+                    style="@style/TextView.Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Pre -Inspection Checklist"
+                    android:textSize="@dimen/_21sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/innerCs" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProfileText"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:textColor="@color/white_2"
+                    android:text="Pre-Job Inspection Details for FLAT TOP RIGID NO CRANE"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvUdi"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUdi" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Personal Details"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvProfileText"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfileText" />
+
+                <View
+                    android:id="@+id/viewDriverName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDriveName"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Robert Jr."
+                    android:textColor="@color/white_2"
+                    app:layout_constraintStart_toStartOf="@+id/viewDriverName"
+                    app:layout_constraintTop_toTopOf="@+id/viewDriverName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Driver Name"
+                    android:textColor="@color/white_2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvDriveName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDriveName" />
+
+                <View
+                    android:id="@+id/viewDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDriverName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="25 March 2024"
+                    android:textColor="@color/white_2"
+                    app:layout_constraintStart_toStartOf="@+id/viewDate"
+                    app:layout_constraintTop_toTopOf="@+id/viewDate" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv3"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Date"
+                    android:textColor="@color/white_2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvDate"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDate" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv4"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Vehicle Details"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/viewDate"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDate" />
+
+                <View
+                    android:id="@+id/viewTruckRego"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTruckRego"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="ABC123"
+                    android:textColor="@color/white_2"
+                    app:layout_constraintStart_toStartOf="@+id/viewTruckRego"
+                    app:layout_constraintTop_toTopOf="@+id/viewTruckRego" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv5"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Truck Rego"
+                    android:textColor="@color/white_2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvTruckRego"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTruckRego" />
+
+
+                <View
+                    android:id="@+id/viewTruckOdometer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    app:layout_constraintTop_toBottomOf="@+id/viewTruckRego"
+                    tools:layout_editor_absoluteX="16dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTruckTruckOdometer"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="123 Km"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/white_2"
+                    app:layout_constraintStart_toStartOf="@+id/viewTruckOdometer"
+                    app:layout_constraintTop_toTopOf="@+id/viewTruckOdometer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv7"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TTruck Odometer Reading"
+                    android:textColor="@color/white_2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvTruckTruckOdometer"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTruckTruckOdometer" />
+
+
+                <View
+                    android:id="@+id/viewDepot"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    app:layout_constraintTop_toBottomOf="@+id/viewTruckOdometer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDepot"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:text="Warehouse A"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/white_2"
+                    app:layout_constraintStart_toStartOf="@+id/viewTruckOdometer"
+                    app:layout_constraintTop_toTopOf="@+id/viewDepot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv9"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Depot"
+                    android:textColor="@color/white_2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvDepot"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDepot" />
+
+                <View
+                    android:id="@+id/viewTrailerRego"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDepot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTrailerRego"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:text="Warehouse A"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/white_2"
+                    app:layout_constraintStart_toStartOf="@+id/viewTruckOdometer"
+                    app:layout_constraintTop_toTopOf="@+id/viewTrailerRego" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv10"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trailer Rego"
+                    android:textColor="@color/white_2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvTrailerRego"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTrailerRego" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@color/view_line_color_2"
+            app:layout_constraintBottom_toTopOf="@+id/tvNext" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNext"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:background="@drawable/btn_text_view_bg"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Next"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

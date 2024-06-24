@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.route_map.RouteMapFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/img_map_right"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDistance"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="200m"
+            android:gravity="start"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@+id/imgBack"
+            app:layout_constraintStart_toStartOf="@+id/imgBack"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader1"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Take next right"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="@+id/imgBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader2"
+            style="@style/TextView.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="01 Elm Street, 789 Oak Avenue, Baltimore, MD 21201"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvHeader1"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeader1" />
+
+        <fragment
+            android:id="@+id/google_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomSheet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDistance" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgSpeedCircle"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/gray_circle"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/google_map"
+            app:layout_constraintTop_toTopOf="@+id/google_map" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSpeedNo"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="80\nKmh"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/imgSpeedCircle"
+            app:layout_constraintEnd_toEndOf="@+id/imgSpeedCircle"
+            app:layout_constraintStart_toStartOf="@+id/imgSpeedCircle"
+            app:layout_constraintTop_toTopOf="@+id/imgSpeedCircle" />
+
+
+        <include
+            android:id="@+id/bottomSheet"
+            layout="@layout/route_job_bottom_sheet_content"
+            android:background="@drawable/rv_item_background_view_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+      <!--  <include
+            android:id="@+id/searchBottomSheet"
+            layout="@layout/search_bottom_sheet_design"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

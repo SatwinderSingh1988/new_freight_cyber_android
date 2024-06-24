@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.auth.authentication_method.facial.FacialActivityVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/img_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRegisterFace"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Register your face"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRegisterFace2"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(2 of 4)"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white_3"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRegisterFace"
+            app:layout_constraintStart_toEndOf="@+id/tvRegisterFace" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthText"
+            style="@style/TextView.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:lineSpacingExtra="@dimen/_3sdp"
+            android:textColor="@color/white_3"
+            android:text="@string/register_face_text"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvRegisterFace"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterFace" />
+
+        <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+            android:id="@+id/circular_progress"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_215sdp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:direction="clockwise"
+            app:dotWidth="16dp"
+            app:drawDot="false"
+            app:enableProgressAnimation="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:progressBackgroundColor="@color/grey"
+            android:visibility="visible"
+            app:progressBackgroundStrokeWidth="8dp"
+            app:progressCap="round"
+            app:progressColor="@color/green1"
+            app:progressStrokeWidth="16dp"
+            app:startAngle="90"
+            app:fillBackground="false" />
+
+        <com.seosh817.circularseekbar.CircularSeekBar
+            android:id="@+id/progressSeekbar"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_215sdp"
+            android:backgroundTint="@color/green1"
+            app:circularSeekBar_animation="bounce"
+            app:circularSeekBar_barStrokeCap="butt"
+            app:circularSeekBar_barWidth="20dp"
+            app:circularSeekBar_dashGap="3"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            app:circularSeekBar_dashWidth="1.5"
+            app:circularSeekBar_innerThumbRadius="10dp"
+            app:circularSeekBar_innerThumbStrokeWidth="10dp"
+            app:circularSeekBar_outerThumbRadius="10dp"
+            app:circularSeekBar_outerThumbStrokeWidth="10dp"
+            app:circularSeekBar_startAngle="0"
+            app:circularSeekBar_sweepAngle="360"
+            android:visibility="invisible"
+            app:circularSeekBar_progressColor="@color/green1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/constraintMain"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_180sdp"
+            app:cardCornerRadius="@dimen/_90sdp"
+            app:cardBackgroundColor="@color/transparent"
+            app:layout_constraintStart_toStartOf="@+id/progressSeekbar"
+            app:layout_constraintEnd_toEndOf="@+id/progressSeekbar"
+            app:layout_constraintTop_toTopOf="@+id/progressSeekbar"
+            app:layout_constraintBottom_toBottomOf="@+id/progressSeekbar">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/viewFinder"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/_180sdp"
+                android:background="@drawable/ovel_shape"
+                android:elevation="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFaceText"
+            style="@style/TextView.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="Move head slowly to complete the circle."
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white_3"
+            app:layout_constraintEnd_toEndOf="@+id/progressSeekbar"
+            app:layout_constraintStart_toStartOf="@+id/progressSeekbar"
+            app:layout_constraintTop_toBottomOf="@+id/progressSeekbar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

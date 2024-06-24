@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.job_detail.JobDetailsFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:src="@drawable/img_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="@dimen/_20sdp"
+            android:text="Job Details"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBack"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="@+id/imgBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeader2"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:text="(Job ID)"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+            app:layout_constraintStart_toEndOf="@+id/tvHeader" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/innerCs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgBack">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDes"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:text="Description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/innerCs" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPleaseEnter"
+                    style="@style/TextView.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:lineSpacingExtra="@dimen/_1sdp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur dolore adipiscing elit, sed do eiusmod..."
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvDes"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDes" />
+
+                <View
+                    android:id="@+id/viewLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/dash_color"
+                    app:layout_constraintEnd_toEndOf="@+id/tvPleaseEnter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPleaseEnter" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReadMore"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:text="Read More"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPleaseEnter"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Customer Name"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/viewLine"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCustomerName"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="John"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="@+id/tv1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pick up items"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv1"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/tv1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickUpItems"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv3"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Employer name"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvCustomerName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCustomerName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEmployerName"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="ABC Logistics"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv4"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Pickup"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvEmployerName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEmployerName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickup"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="456 Broad Street, Philadelphia, PA 19107"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv5"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Delivery"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvPickup"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPickup" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCardNo"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="222 Pine Avenue, Richmond, VA Oak Avenue, Baltimore, 23220"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv5"
+                    app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+                <View
+                    android:id="@+id/viewLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/dash_color"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCardNo" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvJockeyDetails"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_12sdp"
+                    android:text="Jockey Details"
+                    android:textColor="@color/grey2"
+                    app:layout_constraintStart_toStartOf="@+id/viewLine2"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLine2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvView"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_12sdp"
+                    android:onClick="@{(v)-> vm.onClick(v)}"
+                    android:padding="@dimen/_10sdp"
+                    android:text="view"
+                    android:textColor="@color/text_color_orange"
+                    app:layout_constraintBottom_toTopOf="@+id/viewLine3"
+                    app:layout_constraintEnd_toEndOf="@+id/viewLine2"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLine2" />
+
+                <View
+                    android:id="@+id/viewLine3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/dash_color"
+                    app:layout_constraintTop_toBottomOf="@+id/tvJockeyDetails" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv6"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Job ID"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/viewLine2"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLine3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvJobId"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="aw223244"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="@+id/tv6"
+                    app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv7"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ETA"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv6"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/tv6" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEta"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="25 Hours"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv7"
+                    app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv8"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Weight"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvJobId"
+                    app:layout_constraintTop_toBottomOf="@+id/tvJobId" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWeight"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="250 Tons"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="@+id/tv8"
+                    app:layout_constraintTop_toBottomOf="@+id/tv8" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv9"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distance"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv8"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/tv8" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDistance"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="500 mi"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvWeight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvEta" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv10"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Pickup Time"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvWeight"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWeight" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickupTime"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="25 March 2024 10:45PM"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv10"
+                    app:layout_constraintTop_toBottomOf="@+id/tv10" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv11"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Special Instructions"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvPickupTime"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPickupTime" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSpecialInstruction"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit morbi, primis laoreet condimentum."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv11"
+                    app:layout_constraintTop_toBottomOf="@+id/tv11" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv12"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Planned Route"
+                    app:layout_constraintStart_toStartOf="@+id/tv11"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSpecialInstruction" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mapDummyImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/dummy_map_image"
+                    app:layout_constraintTop_toBottomOf="@+id/tv12" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgInfo"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:src="@drawable/info"
+                    android:tint="@color/grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mapDummyImage" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvYourBioM"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:text="Map will be downloaded for offline use after you accept the job."
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgInfo"
+                    app:layout_constraintTop_toTopOf="@+id/imgInfo" />
+
+                <View
+                    android:id="@+id/viewAssign"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginVertical="@dimen/_20sdp"
+                    android:background="@drawable/rv_item_background_view"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    app:layout_constraintEnd_toEndOf="@+id/tvYourBioM"
+                    app:layout_constraintStart_toStartOf="@+id/imgInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/tvYourBioM" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAssignedDriver"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="Assigned Drivers"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="@+id/viewAssign"
+                    app:layout_constraintTop_toTopOf="@+id/viewAssign" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeeDetails"
+                    style="@style/TextView.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="See Details"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvAssignedDriver"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAssignedDriver" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgRight"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:onClick="@{v -> vm.onClick(v)}"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/img_right"
+                    android:tint="@color/white_3"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewAssign"
+                    app:layout_constraintEnd_toEndOf="@+id/viewAssign"
+                    app:layout_constraintTop_toTopOf="@+id/viewAssign" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/view_line_color_2"
+                    app:layout_constraintTop_toBottomOf="@+id/viewAssign" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAcceptJob"
+                    style="@style/TextView.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    android:background="@drawable/btn_text_view_bg"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:text="Accept Job"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRejectJob"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:text="Reject Job"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/innerCs"
+                    app:layout_constraintEnd_toEndOf="@+id/tvAcceptJob"
+                    app:layout_constraintStart_toStartOf="@+id/tvAcceptJob"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAcceptJob" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

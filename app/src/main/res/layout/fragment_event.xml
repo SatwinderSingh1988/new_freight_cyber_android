@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.settings.event.EventFragmentVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/img_back"
+            app:layout_constraintBottom_toBottomOf="@+id/tvUdi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvUdi" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUdi"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Events"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:src="@drawable/icon_profile_3"
+            app:layout_constraintBottom_toBottomOf="@+id/tvUdi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvUdi" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDate"
+            style="@style/TextView.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:text="Tue, 23 Mar 2024"
+            android:drawableEnd="@drawable/img_right"
+            android:paddingEnd="@dimen/_12sdp"
+            android:drawableStart="@drawable/img_back_vector"
+            android:gravity="center|center_horizontal"
+            android:background="@drawable/btn_text_view_bg_3"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+
+        <View
+            android:id="@+id/viewStartWork"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/black_3"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            app:layout_constraintStart_toStartOf="@+id/tvDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            app:layout_constraintWidth_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStartWork"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Total Work"
+            android:textColor="@color/white_2"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvStartTime"
+            app:layout_constraintTop_toBottomOf="@+id/tvStartTime" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgTotalWork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{v -> vm.onClick(v)}"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/event_total_work"
+            app:layout_constraintStart_toStartOf="@+id/viewStartWork"
+            app:layout_constraintTop_toTopOf="@+id/viewStartWork" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStartTime"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="05:00 AM"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/imgTotalWork"
+            app:layout_constraintTop_toBottomOf="@+id/imgTotalWork" />
+
+        <View
+            android:id="@+id/viewTotalHour"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/black_3"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            app:layout_constraintWidth_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgTotalRest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{v -> vm.onClick(v)}"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/event_rest"
+            app:layout_constraintStart_toStartOf="@+id/viewTotalHour"
+            app:layout_constraintTop_toTopOf="@+id/imgTotalWork" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalWork"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Total Rest"
+            android:textColor="@color/white_2"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvStartWork"
+            app:layout_constraintStart_toStartOf="@+id/tvTotalTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalTime"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="5h 05m"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTotalWork"
+            app:layout_constraintStart_toStartOf="@+id/imgTotalRest"
+            app:layout_constraintTop_toTopOf="@+id/tvStartTime" />
+
+        <View
+            android:id="@+id/viewRestHour"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/black_3"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            app:layout_constraintStart_toStartOf="@+id/viewStartWork"
+            app:layout_constraintTop_toBottomOf="@+id/viewStartWork"
+            app:layout_constraintWidth_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalRestWork"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Start Time"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/viewRestHour"
+            app:layout_constraintTop_toTopOf="@+id/viewRestHour" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalRestTime"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="8:00 AM"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvTotalRestWork"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalRestWork" />
+
+        <View
+            android:id="@+id/viewBreaksTaken"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_65sdp"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/black_3"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            app:layout_constraintEnd_toEndOf="@+id/viewTotalHour"
+            app:layout_constraintTop_toTopOf="@+id/viewRestHour"
+            app:layout_constraintWidth_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBreakTaken"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Breaks Taken"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/viewBreaksTaken"
+            app:layout_constraintTop_toTopOf="@+id/viewBreaksTaken" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBreakTime"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvBreakTaken"
+            app:layout_constraintTop_toBottomOf="@+id/tvBreakTaken" />
+
+        <View
+            android:id="@+id/viewNextRest"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/black_3"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            app:layout_constraintEnd_toEndOf="@+id/viewRestHour"
+            app:layout_constraintStart_toStartOf="@+id/viewRestHour"
+            app:layout_constraintTop_toBottomOf="@+id/viewRestHour" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNextBreak"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="Next Rest break"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/viewNextRest"
+            app:layout_constraintTop_toTopOf="@+id/viewNextRest" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNextBreakTime"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="15m"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvNextBreak"
+            app:layout_constraintTop_toBottomOf="@+id/tvNextBreak" />
+
+        <View
+            android:id="@+id/viewEndOfTheDay"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_65sdp"
+            android:background="@drawable/rv_item_background_view"
+            android:backgroundTint="@color/black_3"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            app:layout_constraintEnd_toEndOf="@+id/viewBreaksTaken"
+            app:layout_constraintStart_toStartOf="@+id/viewBreaksTaken"
+            app:layout_constraintTop_toTopOf="@+id/viewNextRest" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEndOfTheDay"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="End of the day"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/viewEndOfTheDay"
+            app:layout_constraintTop_toTopOf="@+id/viewEndOfTheDay" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEndTime"
+            style="@style/TextView.Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->vm.onClick(v)}"
+            android:text="15m"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvEndOfTheDay"
+            app:layout_constraintTop_toTopOf="@+id/tvNextBreakTime" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEvent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewNextRest"
+            tools:itemCount="2"
+            tools:listitem="@layout/event_list_item" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

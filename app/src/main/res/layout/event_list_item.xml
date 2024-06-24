@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.app.freightCyber.core.base.recycler_view.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.app.freightCyber.domain.model.dummy_data.EventLog" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgDot1"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            app:shapeAppearance="@style/Shape50"
+            android:tint='@{bean.status == "Work" ? @color/green : @color/yellow2}'
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/dot_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEdit"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:onClick="@{(v)->callback.onItemClick(v,bean,pos)}"
+            android:text="Edit"
+            android:textColor="@color/text_color_orange"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWork"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvWork" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWork"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->callback.onItemClick(v,bean , pos)}"
+            tools:text="Work"
+            android:text="@{bean.status}"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imgDot1"
+            app:layout_constraintStart_toEndOf="@+id/imgDot1"
+            app:layout_constraintTop_toTopOf="@+id/imgDot1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAdd"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->callback.onItemClick(v,bean , pos)}"
+            android:text="456 Elm Avenue, Smallville, USA"
+            android:textColor="@color/grey"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvWork"
+            app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvKm"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:drawableStart="@drawable/speedometer"
+            android:drawablePadding="@dimen/_5sdp"
+            android:onClick="@{(v)->callback.onItemClick(v,bean , pos)}"
+            android:text="5000 KM"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgDot1"
+            app:layout_constraintTop_toBottomOf="@+id/tvAdd" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:background="@color/white_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imgDot1"
+            app:layout_constraintStart_toStartOf="@+id/imgDot1"
+            app:layout_constraintTop_toBottomOf="@+id/imgDot1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTime"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:drawableStart="@drawable/img_time_3"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/white_3"
+            android:onClick="@{(v)->callback.onItemClick(v,bean , pos)}"
+            android:text="5000 KM"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvKm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvKm" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

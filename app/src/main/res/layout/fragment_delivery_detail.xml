@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.app.freightCyber.presentation.home_dashboard.job.job_history.details.DeliveryDetailFragmentVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Pickup"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPickup"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="456 Broad Street, Philadelphia, PA 19107"
+            android:textColor="@color/white_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Delivery"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvPickup"
+            app:layout_constraintTop_toBottomOf="@+id/tvPickup" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDelivery"
+            style="@style/TextView.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:letterSpacing=".01"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="222 Pine Avenue, Richmond, VA Oak Avenue, Baltimore, 23220"
+            android:textColor="@color/white_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv3"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Receiver Name"
+            android:textColor="@color/white_2"
+            app:layout_constraintStart_toStartOf="@+id/tvDelivery"
+            app:layout_constraintTop_toBottomOf="@+id/tvDelivery" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvReceiverName"
+            style="@style/TextView.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="Jhon Snow"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv4"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textColor="@color/white_2"
+            app:layout_constraintStart_toStartOf="@+id/tvReceiverName"
+            app:layout_constraintTop_toBottomOf="@+id/tvReceiverName" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/dummy_gallery_img"
+            app:layout_constraintStart_toStartOf="@+id/tv4"
+            app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv5"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Delivery Remarks"
+            android:textColor="@color/white_2"
+            app:layout_constraintStart_toStartOf="@+id/image"
+            app:layout_constraintTop_toBottomOf="@+id/image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeliveryRemark"
+            style="@style/TextView.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit morbi, primis laoreet condimentum."
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv6"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Feedback"
+            android:textColor="@color/white_2"
+            app:layout_constraintStart_toStartOf="@+id/tvDeliveryRemark"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeliveryRemark" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/Feedback"
+            style="@style/TextView.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit morbi, primis laoreet condimentum."
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv7"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Rating"
+            android:textColor="@color/white_2"
+            app:layout_constraintStart_toStartOf="@+id/Feedback"
+            app:layout_constraintTop_toBottomOf="@+id/Feedback" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="@+id/tv7"
+            app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRatings"
+            style="@style/TextView.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.0"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textColor="@color/white_2"
+            app:layout_constraintBottom_toBottomOf="@+id/imgStar"
+            app:layout_constraintStart_toEndOf="@+id/imgStar"
+            app:layout_constraintTop_toTopOf="@+id/imgStar" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSign"
+            style="@style/TextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Signature"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textColor="@color/grey2"
+            app:layout_constraintStart_toStartOf="@+id/imgStar"
+            app:layout_constraintTop_toBottomOf="@+id/imgStar" />
+
+           <View
+           android:id="@+id/signView"
+           style="@style/EditTextStyle2"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/_100sdp"
+           android:layout_marginBottom="@dimen/_20sdp"
+           android:layout_marginTop="@dimen/_8sdp"
+           android:onClick="@{(v)-> vm.onClick(v)}"
+           android:layout_marginHorizontal="@dimen/_12sdp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/tvSign" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

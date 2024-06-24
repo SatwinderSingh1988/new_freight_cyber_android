@@ -1,0 +1,58 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/driverProfileFragment"
+        android:icon="@drawable/nav_my_profile"
+        android:title="My Profile" />
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/eventFragment"
+        android:title="Events"
+        android:icon="@drawable/img_check_yellow"/>
+
+    <item
+        android:id="@+id/jobFragment"
+        android:icon="@drawable/slide_my_job"
+        android:title="My Jobs" />
+
+    <item
+        android:id="@+id/inboxFragment"
+        android:icon="@drawable/inbox"
+        android:title="Inbox" />
+
+    <item
+        android:id="@+id/myReportFragment"
+        android:icon="@drawable/slide_compliance"
+        android:title="My Reports" />
+
+    <item
+        android:id="@+id/driverTimeSheetFragment"
+        android:title="My Timesheets"
+        android:icon="@drawable/slide_compliance"/>
+
+    <item
+        android:id="@+id/addDiarySwitchFragment"
+        android:title="Switch Diary"
+        android:icon="@drawable/slide_compliance"/>
+
+    <item
+        android:id="@+id/helpFragment"
+        android:title="Help"
+        android:icon="@drawable/img_help"/>
+
+    <item
+        android:id="@+id/terms"
+        android:title="@string/terms_conditions"
+        android:icon="@drawable/terms_settings"/>
+
+
+</menu>
+
+

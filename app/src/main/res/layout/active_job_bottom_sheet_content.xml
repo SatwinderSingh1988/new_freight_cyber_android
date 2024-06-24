@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <FrameLayout
+        android:id="@+id/standardBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:id="@+id/drag_handle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:background="@drawable/rv_item_background_view_2"
+            android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/rv_item_background_view_2"
+            android:backgroundTint="@color/black"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/fragment_home_drag_handle"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:background="@drawable/rv_item_background_view"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:background="@drawable/rv_item_background_view"
+                android:backgroundTint="@color/black_3"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_drag_handle" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv1"
+                style="@style/TextView.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="ETA"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintWidth_percent=".43"
+                app:layout_constraintStart_toStartOf="@+id/view1"
+                app:layout_constraintTop_toTopOf="@+id/view1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDuration"
+                style="@style/TextView.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="1 hr 8 m (120mi)"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@+id/view1"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv2"
+                style="@style/TextView.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:text="Next Rest Area"
+                android:gravity="start"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintWidth_percent=".43"
+                app:layout_constraintEnd_toEndOf="@+id/view1"
+                app:layout_constraintTop_toTopOf="@+id/tv1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDistance"
+                style="@style/TextView.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25 KM"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@+id/tv2"
+                app:layout_constraintTop_toTopOf="@+id/tvDuration" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReport"
+                style="@style/TextView.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/btn_text_view_bg_2"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_6sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_12sdp"
+                android:paddingHorizontal="@dimen/_80sdp"
+                android:text="Report Issue"
+                android:drawableStart="@drawable/img_flag"
+                app:layout_constraintEnd_toEndOf="@+id/tv2"
+                app:layout_constraintStart_toStartOf="@+id/tvDuration"
+                app:layout_constraintTop_toBottomOf="@+id/tvDuration" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/csStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/rv_item_background_view"
+                android:backgroundTint="@color/black_3"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv3"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Status"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStatus"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Job Started"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tv3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgUpDown"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/img_up_vector"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvStatus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv3" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/view_line_color_3"
+                    app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgInfo"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:onClick="@{(v)->vm.onClick(v)}"
+                    android:src="@drawable/info"
+                    android:tint="@color/grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvYourBioM"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:text="Change the status once reached at the spot."
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgInfo"
+                    app:layout_constraintTop_toTopOf="@+id/imgInfo" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEnroute"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Enroute"
+                    android:textColor="@color/text_color_orange"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toEndOf="@+id/imgLocationSymbol"
+                    app:layout_constraintTop_toBottomOf="@+id/tvYourBioM" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgLocationSymbol"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/location_symbol"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEnroute"
+                    app:layout_constraintStart_toStartOf="@+id/imgInfo"
+                    app:layout_constraintTop_toTopOf="@+id/tvEnroute" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/location_trail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="@dimen/_1sdp"
+                    android:src="@drawable/location_trail"
+                    app:layout_constraintBottom_toTopOf="@+id/imgLocationSymbol2"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol"
+                    app:layout_constraintTop_toBottomOf="@+id/imgLocationSymbol" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEnrouteTime"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="Tue, Mar 24 - 12:20 PM"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvEnroute"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEnroute" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvArrived"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Arrived"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvEnroute"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEnrouteTime" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgLocationSymbol2"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/circle_with_dot"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvArrived"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvArriveTime"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="Tue, Mar 24 - 12:20 PM"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvArrived"
+                    app:layout_constraintTop_toBottomOf="@+id/tvArrived" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/location_trail2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="@dimen/_1sdp"
+                    android:src="@drawable/location_trail"
+                    app:layout_constraintBottom_toTopOf="@+id/imgLocationSymbol33"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol2"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol2"
+                    app:layout_constraintTop_toBottomOf="@+id/imgLocationSymbol2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickup"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Picked Up"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvArrived"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSafetyTime" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgLocationSymbol3"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/circle_with_dot"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPickup"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/location_trail33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="@dimen/_1sdp"
+                    android:src="@drawable/location_trail"
+                    app:layout_constraintBottom_toTopOf="@+id/imgLocationSymbol3"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol3"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol3"
+                    app:layout_constraintTop_toBottomOf="@+id/imgLocationSymbol33" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSafetyInductionRequired"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Safety Induction Required"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/safty_indection"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvArrived"
+                    app:layout_constraintTop_toBottomOf="@+id/tvArriveTime" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSafetyTime"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="At the following location(s), a safety induction is mandatory before proceeding with the job"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvSafetyInductionRequired"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSafetyInductionRequired" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgLocationSymbol33"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/circle_with_dot"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvSafetyInductionRequired"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol"
+                    app:layout_constraintTop_toTopOf="@+id/tvSafetyInductionRequired" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/location_trail3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="@dimen/_1sdp"
+                    android:src="@drawable/location_trail"
+                    app:layout_constraintBottom_toTopOf="@+id/imgLocationSymbol4"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol3"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol3"
+                    app:layout_constraintTop_toBottomOf="@+id/imgLocationSymbol3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickupTime"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="Tue, Mar 24 - 12:20 PM"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvArrived"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPickup" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEnroute2"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Enroute"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvArrived"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPickupTime" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgLocationSymbol4"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/circle_with_dot"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEnroute2"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEnrouteTime2"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tue, Mar 24 - 12:20 PM"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvArrived"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEnroute2" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/location_trail4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="@dimen/_1sdp"
+                    android:src="@drawable/location_trail"
+                    app:layout_constraintBottom_toTopOf="@+id/imgLocationSymbol5"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol4"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol4"
+                    app:layout_constraintTop_toBottomOf="@+id/imgLocationSymbol4" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDelivered"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Delivered"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvArrived"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEnrouteTime2" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgLocationSymbol5"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/location_symbol_2"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDelivered"
+                    app:layout_constraintEnd_toEndOf="@+id/imgLocationSymbol"
+                    app:layout_constraintStart_toStartOf="@+id/imgLocationSymbol" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDeliveredTime"
+                    style="@style/TextView.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="Tue, Mar 24 - 12:20 PM"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvArrived"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDelivered" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,84 @@
+<resources>
+    <!--<string name="app_name">FrieghtCyber</string>-->
+
+    <string name="session_expired">session_expired</string>
+    <string name="alert">Alert</string>
+    <string name="post_detail">Post Detail</string>
+    <string name="please_try_again">Please try again</string>
+    <string name="plz_wait">Plz wait</string>
+    <string name="error_found">Error Found</string>
+    <string name="forgot_password"><u>Forgot Password ?</u></string>
+    <string name="or_login"><u>or login with</u></string>
+    <string name="hello_blank_fragment">Home Seeker fragment</string>
+    <string name="fav_fragment">Fav  fragment</string>
+    <string name="title_activity_job_deatils">JobDeatilsActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="english">English</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="tv_sign_up_text_freight_cyber">Stay Compliant and Efficient with our Electronic Work Diary feature, tailored to meet Australian regulations. Easily log your driving hours, rest breaks, and compliance data, ensuring regulatory adherence while on the road.</string>
+    <string name="please_enter_your">Please enter your mobile number to receive a temporary verification code.</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="by_cont">To continue, please accept our Terms and Conditions</string>
+    <string name="skip">Skip</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="terms_conditions_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n\nSection 1.10.32 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</string>
+    <string name="auth_text">Set up a minimum of two authentication methods to enable quick login in the future.</string>
+    <string name="your_bio_m">Your biometric information will be securely stored on your device and not shared with third parties.</string>
+    <string name="ver_finger_text">Please place your finger on the fingerprint scanner to register your fingerprint.</string>
+    <string name="register_face_text">Please position your face within the frame to register for facial recognition. Ensure that your face is well-lit and visible.</string>
+    <string name="voice_text">Speak your passphrase clearly, Make sure there is no background noise.</string>
+    <string name="choose_the_profile_creation_method">Choose the profile creation method</string>
+    <string name="udi_ca_12345_19901025">UDI: CA-12345-19901025</string>
+    <string name="settings_preferences"><![CDATA[Settings & preferences]]></string>
+    <string name="send_requests_to">Send requests to registered businesses on Freight Cyber to get specific jobs from them.</string>
+    <string name="are_you_sure">Are you sure you want to remove this business?</string>
+    <string name="fingerprint_setup_text">Setup your fingerprint</string>
+    <string name="verify_your_phone_number">Verify your Phone Number</string>
+    <string name="please_enter_the_verification_code_sent_to_your_mobile_number_1_0123456789">Please enter the verification code sent to your mobile number +1 0123456789</string>
+    <string name="verify_phone_number">Verify Phone Number</string>
+    <string name="setup_your_passcode">Setup your Passcode</string>
+    <string name="set_up_a_passcode_in_case_biometric_methods_are_unavailable_enter_a_4_digit_pin_below">Set up a Passcode in case biometric methods are unavailable. Enter a 4-digit PIN below:</string>
+    <string name="save_pin">Save PIN</string>
+    <string name="fluid_levels_leaks"><![CDATA[Fluid Levels & Leaks]]></string>
+    <string name="accept_commence_job_20s"><![CDATA[Accept & Commence Job (20s)]]></string>
+    <string name="let_us_know">Let us know what happened, so we can assist you better. Please ensure you are in a safe location before logging your report.</string>
+    <string name="my_jobs">My Jobs</string>
+    <string name="compliance">Compliance</string>
+    <string name="inbox">Inbox</string>
+    <string name="ework_diary">eWork Diary</string>
+    <string name="confirm_start_work"><![CDATA[Confirm & Start Work]]></string>
+    <string name="resting">Resting</string>
+    <string name="solo_working">Solo Working</string>
+    <string name="safety_induction">umquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</string>
+    <string name="login_with_passcode">Login with Passcode</string>
+    <string name="enter_your_passcode_to_login">Enter Your Passcode to Login.</string>
+    <string name="date_time_of_accident"><![CDATA[Date & Time of Accident]]></string>
+    <string name="verify_your_email_address">Verify your Email Address</string>
+    <string name="please_enter_the_verification_code_sent_to_your_email_admin_gmail_com">Please enter the verification code sent to your email admin@gmail.com.</string>
+    <string name="submit">Submit</string>
+    <string name="dummy_terms_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</string>
+    <string name="make_model_operating_system"><![CDATA[Make, Model & Operating System]]></string>
+    <string name="please_fill_all_the_details">Please fill all the details</string>
+    <string name="required">Required</string>
+    <string name="Please_enter_your_email_address">Please enter your email address</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="compliance_status">Compliance status</string>
+    <string name="checked">Checked</string>
+    <string name="issue_found">Issue found</string>
+    <string name="asset_not_fit_for_use">Asset not fit for use</string>
+    <string name="comments">Comments</string>
+    <string name="input">Input</string>
+    <string-array name="title">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>CPP</item>
+    </string-array>
+
+</resources>
